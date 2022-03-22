@@ -1,17 +1,18 @@
 body {
   margin: 0;
+  position: absolute;
 }
 video {
   object-fit: cover;
   height: 100%;
   width: 100%;
-
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
 }
 .videobg {
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -19,4 +20,12 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#txt {
+  color: white;
+  display: grid;
+  width: 100vw;
+  height: 90vh;
+  justify-content: center;
+  align-content: center;
 }

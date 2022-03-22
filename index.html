@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="styling.css">
     <title>Float</title>
 </head>
@@ -17,6 +16,29 @@
             <source src="background/Y2Mate.is - Free HD Galaxy Seamless Loop - Stock Footage-7NyEX8DjOTw-1080p-1645919399816.mp4">
         </video>
     </div>
-</body>
 
+
+    <h1><div id="txt"></div></h1>
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            h = ((h + 11) % 12 + 1);
+            let suffix = h <= 12 ? "PM" : "AM"
+
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + " " + suffix;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+</body>
 </html>
