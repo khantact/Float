@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="styling.css">
+    <title>Float</title>
+</head>
+
+<body onload="startTime()">
+    <!-- <h1>Welcome to Float!</h1> -->
+    <div class="videobg">
+        <video autoplay loop muted>
+            <source src="background/Y2Mate.is - Free HD Galaxy Seamless Loop - Stock Footage-7NyEX8DjOTw-1080p-1645919399816.mp4">
+        </video>
+    </div>
+
+
+    <h1><div id="txt"></div></h1>
+    <script>
+        function startTime() {
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            h = ((h + 11) % 12 + 1);
+            let suffix = h <= 12 ? "PM" : "AM"
+
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + " " + suffix;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+</body>
+</html>
