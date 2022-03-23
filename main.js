@@ -1,4 +1,5 @@
 const{app, BrowserWindow} = require('electron')
+let todoItems = [];
 const createWindow = () =>{
     const win = new BrowserWindow({
         show: false
@@ -28,7 +29,6 @@ function startTime() {
     let s = today.getSeconds();
     h = ((h + 11) % 12 + 1);
     let suffix = h <= 12 ? "PM" : "AM"
-
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + " " + suffix;
@@ -57,3 +57,18 @@ function startDate(){
 
 }
 
+function addToDo(text){
+    const todo = {
+        text,
+        checked: false,
+    };
+    todoItems.push(todo);
+    alert('yes');
+    displayItems(todoItems);
+}
+
+function displayItems(todolist){
+    for(let element in todolist){
+        document.getElementById('tasks').innerHTML = `<li>${element.text}</li>`
+    }
+}

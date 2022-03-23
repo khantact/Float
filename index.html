@@ -15,7 +15,8 @@
             document.querySelector('.videobg').pause();
         }
     </script>
-
+    <!-- load in jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body onload="startTime()">
@@ -35,11 +36,15 @@
     <!-- calls the date functions -->
     <script src="main.js"></script> 
     <script>startDate();</script>
-    <form id="tasks">
-        <label for="todolist">To Do:</label>
-        <input type="text" placeholder="Press enter to submit" id="todolist">
-    </form>
-    
+    <div id="tdlist">
+        <form id="tdtitle" onsubmit="displayItems()">
+            <label for="todolist">To Do:</label>
+            <input type="text" placeholder="Press enter to submit" id="todolist">
+            <input type="submit" style="display:none;">
+        </form>
+        <ul id="tasks">
+        </ul>
+    </div>
 </body>
 
 </html>

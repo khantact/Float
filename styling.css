@@ -36,9 +36,7 @@ video {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-#dateformat {
-  font-size: large;
-}
+#dateformat,
 #day {
   font-size: large;
 }
@@ -47,13 +45,8 @@ video {
   margin-bottom: 0px;
 }
 
-#tasks {
+#tdtitle {
   background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  font-size: larger;
-  text-align: right;
-  right: 2.5%;
-  transform: translate(-50%, -50%);
   margin-top: 2.5vh;
 }
 #todolist {
@@ -63,4 +56,28 @@ video {
 }
 #todolist:focus {
   outline: white;
+}
+#tdlist {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  font-size: larger;
+  text-align: right;
+  right: 5vw;
+}
+@keyframes strike {
+  from {
+    text-decoration-color: transparent;
+  }
+  to {
+    text-decoration-color: auto;
+  }
+}
+#tasks {
+  text-align: left;
+  transition: 300ms;
+  cursor: pointer;
+}
+#tasks:hover {
+  text-decoration: line-through;
+  animation: strike 0.5s linear;
 }
