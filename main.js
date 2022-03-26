@@ -1,6 +1,5 @@
 const{app, BrowserWindow, dialog} = require('electron')
 
-let todoItems = [];
 
 const createWindow = () =>{
     const win = new BrowserWindow({
@@ -62,30 +61,3 @@ function startDate(){
 
 }
 
-function addToDo(text){
-    const todo = {
-        text,
-        checked: false,
-    };
-    todoItems.push(todo);
-    displayItems(todoItems);
-}
-
-function onSubmit(event){
-    alert('test');
-    event.preventDefault();
-    const input = $('#todolist');
-    const text = input.ariaValueMax.trim();
-    if (text !== '') {
-        addToDo(text);
-        input.value = '';
-        input.focus();
-    }
-}
-
-window.onfocus = () => {
-    $('.videobg').get(0).play();
-}
-window.onblur = () => {
-    $('.videobg').get(0).pause();
-}

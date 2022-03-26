@@ -15,7 +15,7 @@ video {
   top: 0;
   left: 0;
 }
-.videobg {
+#videobg {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -80,4 +80,19 @@ video {
 #tasks:hover {
   text-decoration: line-through;
   animation: strike 0.5s linear;
+}
+
+#npad {
+  position: fixed;
+  font-size: larger;
+  text-align: center;
+  right: 5vw;
+  top: 30vh;
+}
+#notepad {
+  outline: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  color: white;
+  font-family: "Red Hot Mono", monospace;
 }
