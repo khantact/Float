@@ -83,16 +83,11 @@ video {
 }
 
 #npad {
-  position: fixed;
-  font-size: larger;
-  text-align: center;
-  right: 5vw;
-  top: 30vh;
-}
-#notepad {
-  outline: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: left;
   color: white;
-  font-family: "Red Hot Mono", monospace;
+  height: 10vh;
+}
+#container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  max-width: 33vw;
 }

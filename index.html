@@ -5,28 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="styling.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="node_modules\quill\dist\quill.snow.css" rel="stylesheet">
     <title>Float</title>
 
 </head>
 
-<body onload="startTime()">
-    <!-- <h1>Welcome to Float!</h1> -->
+<body>
+    <!-- BG -->
     <div id="videobg">
         <video autoplay loop muted>
             <source
                 src="background/Y2Mate.is - Free HD Galaxy Seamless Loop - Stock Footage-7NyEX8DjOTw-1080p-1645919399816.mp4">
         </video>
     </div>
- 
+    <!-- Date -->
     <div id="date">
         <h1 id="txt"></h1>
         <div id="dateformat"></div>
         <div id="day"></div>   
     </div>
-    <!-- calls the date functions -->
-    <script src="main.js"></script> 
-    <script>startDate();</script>
+    <!-- To Do List (Needs work) -->
     <div id="tdlist">
         <form id="tdtitle">
             <label for="todolist">To Do:</label>
@@ -37,16 +35,20 @@
             <li>test</li>
         </ul>
     </div>
-    <div id="npad">
-        <!-- <label for="notepad" style="">Notepad</label>
-        
-        
-            <br>
-        <textarea id="notepad" cols="30" rows="50"></textarea> -->
+    <!-- Notepad (WIP) -->
+    <div id="container">
+        <div id="npad"></div>
     </div>
+    <!-- Loading Functions -->
+    <script>
+        window.onload = function(){
+            startTime();
+            startDate();
+            startQuill();
+        }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="main.js"></script>
-    <script src="App.js" defer></script>
 </body>
 
 </html>

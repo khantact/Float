@@ -1,11 +1,11 @@
 const{app, BrowserWindow, dialog} = require('electron')
 
-
 const createWindow = () =>{
     const win = new BrowserWindow({
         show: false,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false,
         }
     })
     win.maximize();
@@ -13,6 +13,7 @@ const createWindow = () =>{
     win.loadFile('index.html')
 
 }
+app.disableHardwareAcceleration();
 // Create the window when app is ready
 app.whenReady().then(() =>{
     createWindow();
@@ -36,8 +37,8 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s + " " + suffix;
-    setTimeout(startTime, 1000);
     setTimeout(startDate, 1000);
+    setTimeout(startTime, 1000);
 }
 
 function checkTime(i) {
@@ -60,4 +61,13 @@ function startDate(){
     day.innerHTML = daysOfWeek[weekday-1];
 
 }
-
+function startQuill(){
+    var Quill = require('quill')
+    var editor = new Quill('#npad', {
+        modules: {
+            toolbar: true,
+        },
+        placeholder: 'Start typing here!',
+        theme: 'snow'
+    })
+}
