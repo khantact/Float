@@ -1,8 +1,13 @@
-const{app, BrowserWindow} = require('electron')
+const{app, BrowserWindow, dialog} = require('electron')
+
 let todoItems = [];
+
 const createWindow = () =>{
     const win = new BrowserWindow({
-        show: false
+        show: false,
+        webPreferences: {
+            nodeIntegration: true
+        }
     })
     win.maximize();
     win.show();
@@ -63,12 +68,24 @@ function addToDo(text){
         checked: false,
     };
     todoItems.push(todo);
-    alert('yes');
     displayItems(todoItems);
 }
 
-function displayItems(todolist){
-    for(let element in todolist){
-        document.getElementById('tasks').innerHTML = `<li>${element.text}</li>`
+function onSubmit(event){
+    alert('test');
+    event.preventDefault();
+    const input = $('#todolist');
+    const text = input.ariaValueMax.trim();
+    if (text !== '') {
+        addToDo(text);
+        input.value = '';
+        input.focus();
     }
+}
+
+window.onfocus = () => {
+    $('.videobg').get(0).play();
+}
+window.onblur = () => {
+    $('.videobg').get(0).pause();
 }
