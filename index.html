@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <link rel="stylesheet" href="styling.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <title>Float</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+
 </head>
 
 <body onload="startTime()">
     <!-- <h1>Welcome to Float!</h1> -->
-    <div class="videobg">
+    <div id="videobg">
         <video autoplay loop muted>
             <source
                 src="background/Y2Mate.is - Free HD Galaxy Seamless Loop - Stock Footage-7NyEX8DjOTw-1080p-1645919399816.mp4">
@@ -34,9 +34,19 @@
             <input type="submit" style="display:none;">
         </form>
         <ul id="tasks">
+            <li>test</li>
         </ul>
     </div>
-    <script src="onsubmit.js"></script>
+    <div id="npad">
+        <!-- <label for="notepad" style="">Notepad</label>
+        
+        
+            <br>
+        <textarea id="notepad" cols="30" rows="50"></textarea> -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="App.js" defer></script>
 </body>
 
 </html>
