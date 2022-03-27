@@ -51,6 +51,7 @@ video {
 }
 #todolist {
   color: white;
+  min-width: 33vw;
   background-color: rgba(0, 0, 0, 0.5);
   border-color: black;
 }
@@ -61,7 +62,7 @@ video {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   font-size: larger;
-  text-align: right;
+  text-align: left;
   min-width: 33vw;
   right: 0;
 }
