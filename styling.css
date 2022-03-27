@@ -62,7 +62,8 @@ video {
   position: fixed;
   font-size: larger;
   text-align: right;
-  right: 5vw;
+  min-width: 33vw;
+  right: 0;
 }
 @keyframes strike {
   from {
